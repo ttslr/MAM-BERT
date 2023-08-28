@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/skeleton.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="SpeechResearch">
+<title>Text-to-Speech for Low-Resource Agglutinative Language with Morphology-Aware Language Model Pre-training</title>
+</head>
+<body>
+
+<div class="container">
+	<main role="main">
+		<article>
+      
+      <h2 class="title"><b>Text-to-Speech for Low-Resource Agglutinative Language with Morphology-Aware Language Model Pre-training</b></h2>
+      
+       
+      <br>
+      <div class="abstract">
+        <p><strong>Abstract</strong><br>
+          Text-to-Speech (TTS) aims to convert the input text to a human-like voice. With the development of deep learning, encoder-decoder based TTS models perform superior performance, in terms of naturalness, in mainstream languages such as Chinese, English, etc. Note that the linguistic information learning capability of the text encoder is the key. However, for TTS of low-resource agglutinative languages, the scale of the $<$text, speech$>$ paired data is limited. Therefore, how to extract rich linguistic information from small-scale text data to enhance the naturalness of the synthesized speech, is an urgent issue that needs to be addressed. In this paper, we first collect a large unsupervised text data for BERT-like language model pretraining, and then adopt the trained language model to extract deep linguistic information for the input text of the TTS model to improve the naturalness of the final synthesized speech. It should be emphasized that in order to fully exploit the prosody-related linguistic information in agglutinative languages, we incorporated morphological information into the language model training and constructed a morphology-aware masking based BERT model (MAM-BERT). Experimental results based on various advanced TTS models validate the effectiveness of our approach.</p>
+      </div>
+
+   <br> <br>
+      <img src="fig2.jpg" width="100%">
+<img src="fig3.jpg" width="100%">
+  
+      <h5 class="section">TTS Evaluations</h5>
+
+
+     
+      <table>
+        <thead style="border-bottom: 1px solid #E1E1E1;"><tr>
+        <th>GT</th>
+        <th>FastSpeech2 <br>(Mel + HiFi-GAN)</th>
+        <th>BERT + FastSpeech2 <br>(Mel + HiFi-GAN)</th>
+        <th>MAM-BERT + FastSpeech2 <br>(Mel + HiFi-GAN)</th>
+        </tr></thead>
+   
+        <tbody>
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 1:</b> iNgiged buhu hvxigvn-v hebqiyen-du xinjilehu vhagan tEgnig mergejil-un uileqilegen-u twwr-i alhvm alhvm-iyar buridugulun_e (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000004.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000004-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000004-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000004.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 2:</b> ene yabvdal-vn job bvrvgv gajigv xilvgvn-v tvhai jwhiyagqi dvr_a-bar-iyan xigumjiley_e geju bwdwhv ugei (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000012.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000012-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000012-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000012.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 3:</b> wdw yamar qag bwljv endehi-yin ajil hiri jerge hundu baig_a-yi qi medehu heregtei (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000033.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000033-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000033-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000033.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 4:</b> talabvr emhi jambarag_a-ban aldajv eregtei emegtei ijagvrtan erhimted jug qig ugei guyulduju jigvtajagan_a (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000035.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000035-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000035-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000035.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 5:</b> jalagv deslegqi bardam alhvgsagar hatabqi alhvn wrwjv irehu-du egelji-yin svbilagqi iniyegseger vgtvn abvl_a (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000039.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000039-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000039-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000039.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 6:</b> tabag-tai idege-eqe amsahv-dagan ehileged xihir metu taNsvg amtatan-i mwNgwl homun ehileju amsadag ugei (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000040.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000040-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000040-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000040.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 7:</b> nige tabag HvisiyaN bvrqag ali geju jaNgvida-dv heleged yisun jwgws gargajv jergeqegulun talbin_a (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000050.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000050-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000050-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000050.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 8:</b> jobhen buhu aNgi-bar huqu hamtvran qirmaibal bide ene vdagan-v vrvldvgan-dv qwhwm teriguleju bwlhv-yvm (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000051.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000051-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000051-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000051.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 9:</b> bariqagan-v ajilqid gedeg medegelel-un vran jwhiyal-dv gwwl bwlhv gvrban tal_a-yin baidal-i dursulen twgaqijai (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000058.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000058-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000058-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000058.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+          <tr><td colspan="4"><p class="transcript" align="left"><em><b>Sample 10:</b> torol buri-yin twli biqig-i nairagvlhv-dv yehe tolob dwwrahi metu hwyar jarqim-i barimtaladag bila (Latin Sequence)  </em></p></td></tr>
+          <tr>
+            <td><audio controls="controls"><source src="audios/GT/01_1_000063.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/FS2/01_1_000063-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/BERT+FS2/01_1_000063-vocoder.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+            <td><audio controls="controls"><source src="audios/MAMBERT+FS2/01_1_000063.wav" autoplay/>Your browser does not support the audio element.</audio></td>
+          </tr>
+
+
+          </tbody>
+      </table>
+
+
+
+      
+
+ 
+ 
+ 
+ 
+<br><br><br><br>
+
+		</article>
+	</main>
+
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139981676-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+</body>
+</html>
